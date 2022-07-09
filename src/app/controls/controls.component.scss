@@ -10,4 +10,12 @@
       grid-template-columns: 50% 50%;
     }
   }
+
+  .input-fields {
+    display: grid;
+    grid-template-columns: auto 30% 5% 5%;
+    grid-gap: 1em;
+    width: 100%;
+    align-items: center;
+  }
 }

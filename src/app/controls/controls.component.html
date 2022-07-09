@@ -10,5 +10,18 @@
         <input matInput type="text" placeholder="Search">
       </mat-form-field>
 
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+
+      <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
+
     </div>
 </div>

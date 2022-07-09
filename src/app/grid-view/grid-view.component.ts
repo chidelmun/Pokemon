@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PokemonService} from "../pokemon.service";
+import {Pokemon} from "../models";
 
 @Component({
   selector: 'app-grid-view',
@@ -8,11 +9,15 @@ import {PokemonService} from "../pokemon.service";
 })
 export class GridViewComponent implements OnInit {
 
+  pokemons: Pokemon[] = [];
+
   constructor(private pokemonService: PokemonService) { }
 
+
   ngOnInit(): void {
-    this.pokemonService.getAllPokemons().subscribe((pokemons) => {
+    this.pokemonService.getAllPokemons().subscribe((pokemons: any) => {
       console.log('***Pokemons***', pokemons);
+      this.pokemons = pokemons.items;
     })
   }
 

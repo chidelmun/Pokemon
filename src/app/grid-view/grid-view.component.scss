@@ -1,0 +1,22 @@
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.pokemon-card {
+  width: 15em;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em 0em;
+}
+
+.pokemon-app-body-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

@@ -1,16 +1,18 @@
-<div class="application-container">
-  <div>
-    <mat-toolbar color="primary">
-      <span>Pokemon App </span>
-    </mat-toolbar>
+<div class="application-container mat-app-background">
+<!--  <div class="pokemon-app-nav-bar">-->
+<!--    <mat-toolbar color="primary">-->
+<!--      <span>Pokemon App </span>-->
+<!--    </mat-toolbar>-->
+<!--  </div>-->
+
+  <div class="pokemon-app-body-container">
+    <section class="app-header-section">
+      <app-controls> </app-controls>
+    </section>
+
+    <section class="app-body-section">
+      <app-grid-view> </app-grid-view>
+    </section>
   </div>
-
-  <section class="app-header-section">
-    <app-controls> </app-controls>
-  </section>
-
-  <section class="app-body-section">
-    <app-grid-view> </app-grid-view>
-  </section>
 
 </div>

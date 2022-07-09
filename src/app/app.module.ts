@@ -17,6 +17,7 @@ import { GridViewComponent } from './grid-view/grid-view.component';
 import { DetailViewComponent } from './detail-view/detail-view.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatIconModule,
     MatSelectModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,3 +6,10 @@ export interface Pokemon {
   number: number
   types: 'Grass' | 'Poison';
 }
+
+export interface PokemonServiceResponse {
+  count: number;
+  items: Pokemon[];
+  limit: number;
+   offset: number;
+}

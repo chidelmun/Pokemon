@@ -1,0 +1,13 @@
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .toggle-button {
+    width: 100%;
+    mat-button-toggle-group {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+  }
+}

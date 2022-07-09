@@ -3,12 +3,17 @@
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image [src]="pokemon.image" alt="Photo of a Shiba Inu">
     <mat-card-content>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <div class="pokemon-info">
+          <span> {{ pokemon.name }}</span> <br>
+          <span> {{ pokemon.types }}</span>
+      </div>
+      <button mat-icon-button color="warn" >
+        <mat-icon>favorite</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

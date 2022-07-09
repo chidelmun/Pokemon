@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PokemonService} from "../pokemon.service";
 
 @Component({
   selector: 'app-controls',
@@ -7,15 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlsComponent implements OnInit {
 
-  foods: any[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
+  pokemonTypes: any[] = [];
 
-  constructor() { }
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
+    this.pokemonService.getPokemonTypes().subscribe((pokemonTypes: any) => {
+      console.log('**** PokemonType****', pokemonTypes);
+      this.pokemonTypes = pokemonTypes.map((t: string) => {
+           return {
+              value: t,
+             viewValue: t
+           };
+      })
+    });
   }
 
 }

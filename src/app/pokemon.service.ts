@@ -13,4 +13,8 @@ export class PokemonService {
   getAllPokemons() {
     return this.httpClient.get(`${PokemonService.API_BASE_URL}/pokemon`);
   }
+
+  getPokemonTypes() {
+    return this.httpClient.get(`${PokemonService.API_BASE_URL}/pokemon-types`);
+  }
 }

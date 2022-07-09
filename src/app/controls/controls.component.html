@@ -11,9 +11,9 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
+        <mat-label>Pokemon Types</mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
+          <mat-option *ngFor="let food of pokemonTypes" [value]="food.value">
             {{food.viewValue}}
           </mat-option>
         </mat-select>

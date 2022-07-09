@@ -12,12 +12,20 @@ import {MatSelectModule} from '@angular/material/select';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ControlsComponent } from './controls/controls.component';
+import { ListViewComponent } from './list-view/list-view.component';
+import { GridViewComponent } from './grid-view/grid-view.component';
+import { DetailViewComponent } from './detail-view/detail-view.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ControlsComponent
+    ControlsComponent,
+    ListViewComponent,
+    GridViewComponent,
+    DetailViewComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +35,9 @@ import { ControlsComponent } from './controls/controls.component';
     MatButtonToggleModule,
     MatInputModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

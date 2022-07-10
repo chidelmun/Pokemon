@@ -1,20 +1,19 @@
 <div [ngClass]="{'grid-container-grid-view': viewMode === 1}">
-  <mat-card [ngClass]="{'pokemon-card-grid-view': viewMode === 1}" *ngFor="let pokemon of pokemons | pokemonFilter : searchTerm: filterByFavorites ">
+  <mat-card [ngClass]="{'pokemon-card-grid-view': viewMode === 1, 'pokemon-card-list-view': viewMode === 0}"
+            *ngFor="let pokemon of pokemons | pokemonFilter : searchTerm: filterByFavorites ">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
     </mat-card-header>
     <img mat-card-image [src]="pokemon.image" alt="Photo of a Shiba Inu">
     <mat-card-content>
-    </mat-card-content>
-    <mat-card-actions>
       <div class="pokemon-info">
-          <span> {{ pokemon.name }}</span> <br>
-          <span> {{ pokemon.types }}</span>
+        <span> {{ pokemon.name }}</span> <br>
+        <span> {{ pokemon.types }}</span>
       </div>
       <button mat-icon-button (click)="togglePokemon(pokemon)" >
         <mat-icon [color]="pokemon.isFavorite ? 'primary' : 'accent' ">favorite</mat-icon>
       </button>
-    </mat-card-actions>
+    </mat-card-content>
   </mat-card>
 </div>
 

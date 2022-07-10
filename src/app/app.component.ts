@@ -13,6 +13,7 @@ export class AppComponent {
 
   handleSearch(searchValue: string) {
     this.searchTerm = searchValue;
+    this.filterByFavorites = false;
   }
 
   handleTypeChange(type: string) {

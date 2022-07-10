@@ -22,13 +22,19 @@
   margin: 0.5em 0em;
 }
 
+.pokemon-card-list-view {
+  height: 10em;
+  display: flex;
+  flex-direction: row;
+}
+
 .pokemon-app-body-container{
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-mat-card-actions {
+mat-card-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -27,3 +27,9 @@ mat-card-actions {
   justify-content: space-between;
   width: 100%;
 }
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}

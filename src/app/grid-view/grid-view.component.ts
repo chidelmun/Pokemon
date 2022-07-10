@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PokemonService} from "../pokemon.service";
-import {Pokemon} from "../models";
+import {Pokemon, PokemonListResponse, PokemonSummary} from "../models";
 
 @Component({
   selector: 'app-grid-view',
@@ -9,16 +9,23 @@ import {Pokemon} from "../models";
 })
 export class GridViewComponent implements OnInit {
 
-  pokemons: Pokemon[] = [];
+  pokemons: PokemonSummary[] = [];
 
   constructor(private pokemonService: PokemonService) { }
 
 
   ngOnInit(): void {
-    this.pokemonService.getAllPokemons().subscribe((pokemons: any) => {
-      console.log('***Pokemons***', pokemons);
+    this.pokemonService.getAllPokemons().subscribe((pokemons: PokemonListResponse) => {
       this.pokemons = pokemons.items;
     })
   }
 
+  togglePokemon(pokemon: any) {
+    if (pokemon.isFavorite) {
+      const resp = this.pokemonService.favoritePokemon(pokemon.id);
+      console.log(resp);
+    } else {
+      this.pokemonService.unFavoritePokemon(pokemon.id);
+    }
+  }
 }

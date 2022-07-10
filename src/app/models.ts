@@ -1,15 +1,29 @@
-export interface Pokemon {
-  id: string;
-  image: string;
-  isFavorite: boolean;
-  name: string;
-  number: number
-  types: 'Grass' | 'Poison';
+export interface PokemonSummary {
+  id:	string;
+  name:	string;
+  image:	string;
+  isFavorite:	boolean;
+  types: string[];
 }
 
-export interface PokemonServiceResponse {
-  count: number;
-  items: Pokemon[];
+export interface Pokemon extends PokemonSummary {
+  sound: string;
+  maxHP: number;
+  maxCP: number;
+  previousEvolutions: PokemonSummary[];
+  evolutions: PokemonSummary[];
+  weight: PokemonSize;
+  height: PokemonSize;
+}
+
+export interface PokemonListResponse {
   limit: number;
-   offset: number;
+  offset:	number;
+  count: number;
+  items: PokemonSummary[];
+}
+
+export interface PokemonSize {
+  minimum: number;
+  maximum: number;
 }

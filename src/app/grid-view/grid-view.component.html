@@ -11,8 +11,8 @@
           <span> {{ pokemon.name }}</span> <br>
           <span> {{ pokemon.types }}</span>
       </div>
-      <button mat-icon-button color="warn" >
-        <mat-icon>favorite</mat-icon>
+      <button mat-icon-button (click)="togglePokemon(pokemon)" >
+        <mat-icon [color]="pokemon.isFavorite ? 'primary' : 'accent' ">favorite</mat-icon>
       </button>
     </mat-card-actions>
   </mat-card>

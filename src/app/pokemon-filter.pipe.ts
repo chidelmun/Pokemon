@@ -7,7 +7,7 @@ import {PokemonSummary} from "./models";
 export class PokemonFilterPipe implements PipeTransform {
 
   transform(pokemons: PokemonSummary[], searchTerm: string): PokemonSummary[] {
-    return pokemons.filter(p => p.name.includes(searchTerm));
+    return pokemons.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()) || p.types.toString().toLowerCase().includes(searchTerm.toLowerCase()));
   }
 
 }

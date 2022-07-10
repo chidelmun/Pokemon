@@ -30,7 +30,6 @@ export class GridViewComponent implements OnInit {
 
 
   togglePokemon(pokemon: PokemonSummary) {
-    // console.log('****POKEMON***', pokemon);
     if (pokemon.isFavorite) {
       this.pokemonService.unFavoritePokemon(pokemon.id).subscribe((data) => {
         pokemon.isFavorite = data.isFavorite;

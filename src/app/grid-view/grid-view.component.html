@@ -4,13 +4,13 @@
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
     </mat-card-header>
-    <img mat-card-image [src]="pokemon.image" alt="Photo of a Shiba Inu">
-    <mat-card-content>
+    <img mat-card-image [src]="pokemon.image" [ngClass]="{'pokemon-image-list-view': viewMode === 0}">
+    <mat-card-content [ngClass]="{'mat-card-content-list-view': viewMode === 0}">
       <div class="pokemon-info">
         <span> {{ pokemon.name }}</span> <br>
         <span> {{ pokemon.types }}</span>
       </div>
-      <button mat-icon-button (click)="togglePokemon(pokemon)" >
+      <button mat-icon-button (click)="togglePokemon(pokemon)" [ngClass]="{'favorite-button-list-view': viewMode === 0}" >
         <mat-icon [color]="pokemon.isFavorite ? 'primary' : 'accent' ">favorite</mat-icon>
       </button>
     </mat-card-content>

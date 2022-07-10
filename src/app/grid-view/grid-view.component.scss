@@ -23,9 +23,12 @@
 }
 
 .pokemon-card-list-view {
-  height: 10em;
   display: flex;
   flex-direction: row;
+  &:hover {
+    background: teal;
+    cursor: pointer;
+  }
 }
 
 .pokemon-app-body-container{
@@ -41,8 +44,23 @@ mat-card-content {
   width: 100%;
 }
 
+.mat-card-content-list-view {
+  justify-content: space-between;
+  margin: 0em 6em;
+  align-items: center;
+}
+
+.pokemon-image-list-view {
+  width: 10em;
+}
+
 button {
   &:hover {
     cursor: pointer;
   }
+}
+
+.favorite-button-list-view {
+  width: 4em;
+  height: 4em;
 }

@@ -11,17 +11,19 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Pokemon Types</mat-label>
-        <mat-select [(ngModel)]="selectedType" (ngModelChange)="handleSelectionChange($event)">
-          <mat-option *ngFor="let pokemonType of pokemonTypes" [value]="pokemonType.value">
-            {{pokemonType.viewValue}}
-          </mat-option>
-        </mat-select>
+        <div class="view-mode-select-field">
+          <mat-label>Pokemon Types</mat-label>
+          <mat-select [(ngModel)]="selectedType" (ngModelChange)="handleSelectionChange($event)">
+            <mat-option *ngFor="let pokemonType of pokemonTypes" [value]="pokemonType.value">
+              {{pokemonType.viewValue}}
+            </mat-option>
+          </mat-select>
+        </div>
+        <div class="view-mode-icons">
+          <mat-icon (click)="onGridModeClick()" >menu</mat-icon>
+
+          <mat-icon (click)="onListModeClick()">list</mat-icon>
+        </div>
       </mat-form-field>
-
-      <mat-icon (click)="onGridModeClick()" >menu</mat-icon>
-
-      <mat-icon (click)="onListModeClick()">list</mat-icon>
-
     </div>
 </div>

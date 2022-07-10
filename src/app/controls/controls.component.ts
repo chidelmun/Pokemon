@@ -18,7 +18,6 @@ export class ControlsComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemonService.getPokemonTypes().subscribe((pokemonTypes: any) => {
-      console.log('**** PokemonType****', pokemonTypes);
       this.pokemonTypes = pokemonTypes.map((t: string) => {
            return {
               value: t,

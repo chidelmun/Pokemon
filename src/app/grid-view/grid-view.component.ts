@@ -1,6 +1,6 @@
-import {Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PokemonService} from "../pokemon.service";
-import {Pokemon, PokemonListResponse, PokemonSummary} from "../models";
+import {PokemonListResponse, PokemonSummary, ViewMode} from "../models";
 
 @Component({
   selector: 'app-grid-view',
@@ -11,8 +11,13 @@ export class GridViewComponent implements OnInit {
 
   @Input()
   searchTerm: string = '';
+  @Input()
+  filterByFavorites: boolean = false;
 
   pokemons: PokemonSummary[] = [];
+
+  @Input()
+  viewMode: ViewMode = ViewMode.Grid;
 
   constructor(private pokemonService: PokemonService) { }
 

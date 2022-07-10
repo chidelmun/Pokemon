@@ -27,3 +27,7 @@ export interface PokemonSize {
   minimum: number;
   maximum: number;
 }
+
+export enum ViewMode {
+  List, Grid
+}

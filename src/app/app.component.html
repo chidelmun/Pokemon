@@ -2,11 +2,20 @@
 
   <div class="pokemon-app-body-container">
     <section class="app-header-section">
-      <app-controls (onSearch)="handleSearch($event)" (onTypeChange)="handleTypeChange($event)"> </app-controls>
+      <app-controls (onListMode)="handleListMode()"
+                    (onGridMode)="handleGridMode()"
+                    (onFavorites)="handleFavoritesClick($event)"
+                    (onAll)="handleAllClicked($event)"
+                    (onSearch)="handleSearch($event)"
+                    (onTypeChange)="handleTypeChange($event)">
+      </app-controls>
     </section>
 
     <section class="app-body-section">
-      <app-grid-view [searchTerm]="searchTerm" > </app-grid-view>
+      <app-grid-view [viewMode]="viewMode"
+                     [filterByFavorites]="filterByFavorites"
+                     [searchTerm]="searchTerm" >
+      </app-grid-view>
     </section>
   </div>
 

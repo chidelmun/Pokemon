@@ -1,6 +1,5 @@
 import {Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import {PokemonService} from "../pokemon.service";
-import {MatSelectChange} from "@angular/material/select";
 
 @Component({
   selector: 'app-controls',
@@ -13,6 +12,18 @@ export class ControlsComponent implements OnInit {
 
   @Output()
   onTypeChange: EventEmitter<string> = new EventEmitter<string>();
+
+  @Output()
+  onAll: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  @Output()
+  onFavorites: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  @Output()
+  onListMode: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  @Output()
+  onGridMode: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   pokemonTypes: any[] = [];
   selectedType: string = '';
@@ -39,10 +50,18 @@ export class ControlsComponent implements OnInit {
   }
 
   onAllClick() {
-
+    this.onAll.emit(true);
   }
 
   onFavoritesClick() {
+    this.onFavorites.emit(true);
+  }
 
+  onListModeClick() {
+    this.onListMode.emit(true)
+  }
+
+  onGridModeClick() {
+    this.onGridMode.emit(true)
   }
 }

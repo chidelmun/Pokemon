@@ -1,11 +1,18 @@
-.grid-container {
+.grid-container-grid-view {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.pokemon-card {
+.grid-container-list-view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.pokemon-card-grid-view {
   width: 15em;
   height: 20em;
   display: flex;

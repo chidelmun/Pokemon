@@ -19,3 +19,10 @@
     align-items: center;
   }
 }
+
+mat-icon {
+  &:hover {
+    cursor: pointer;
+    background: teal;
+  }
+}

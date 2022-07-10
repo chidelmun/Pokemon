@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ViewMode} from "./models";
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  viewMode: ViewMode = ViewMode.Grid;
   searchTerm: string = '';
-  filteredType: string = '';
+  filterByFavorites: boolean = false;
 
   handleSearch(searchValue: string) {
     this.searchTerm = searchValue;
@@ -15,5 +17,22 @@ export class AppComponent {
 
   handleTypeChange(type: string) {
     this.searchTerm = type;
+  }
+
+  handleAllClicked(event: any) {
+    this.filterByFavorites = false;
+    this.searchTerm = '';
+  }
+
+  handleFavoritesClick(event: any) {
+    this.filterByFavorites = true;
+  }
+
+  handleListMode() {
+    this.viewMode = ViewMode.List;
+  }
+
+  handleGridMode() {
+    this.viewMode = ViewMode.Grid;
   }
 }

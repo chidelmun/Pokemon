@@ -6,8 +6,14 @@ import {PokemonSummary} from "./models";
 })
 export class PokemonFilterPipe implements PipeTransform {
 
-  transform(pokemons: PokemonSummary[], searchTerm: string): PokemonSummary[] {
-    return pokemons.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()) || p.types.toString().toLowerCase().includes(searchTerm.toLowerCase()));
+  transform(pokemons: PokemonSummary[], searchTerm: string, favorites?: boolean): PokemonSummary[] {
+    if (favorites) {
+      console.log('FAVORITE****', favorites);
+        return pokemons.filter(p => p.isFavorite === true);
+    } else {
+      return pokemons.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()) || p.types.toString().toLowerCase().includes(searchTerm.toLowerCase()));
+
+    }
   }
 
 }

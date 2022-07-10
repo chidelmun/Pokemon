@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import {PokemonService} from "../pokemon.service";
+import {MatSelectChange} from "@angular/material/select";
 
 @Component({
   selector: 'app-controls',
@@ -7,6 +8,9 @@ import {PokemonService} from "../pokemon.service";
   styleUrls: ['./controls.component.scss']
 })
 export class ControlsComponent implements OnInit {
+
+  @Output()
+  onSearch: EventEmitter<string> = new EventEmitter<string>();
 
   pokemonTypes: any[] = [];
 
@@ -24,4 +28,12 @@ export class ControlsComponent implements OnInit {
     });
   }
 
+  handleSelectionChange(event: any) {
+    console.log('*****CHANGE****', event);
+  }
+
+  handleInput(searchValue: string) {
+    console.log('***Event****', searchValue);
+    this.onSearch.emit(searchValue)
+  }
 }

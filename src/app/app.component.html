@@ -1,17 +1,12 @@
 <div class="application-container mat-app-background">
-<!--  <div class="pokemon-app-nav-bar">-->
-<!--    <mat-toolbar color="primary">-->
-<!--      <span>Pokemon App </span>-->
-<!--    </mat-toolbar>-->
-<!--  </div>-->
 
   <div class="pokemon-app-body-container">
     <section class="app-header-section">
-      <app-controls> </app-controls>
+      <app-controls (onSearch)="handleSearch($event)"> </app-controls>
     </section>
 
     <section class="app-body-section">
-      <app-grid-view> </app-grid-view>
+      <app-grid-view [searchTerm]="searchTerm" > </app-grid-view>
     </section>
   </div>
 

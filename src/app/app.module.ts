@@ -18,6 +18,7 @@ import { DetailViewComponent } from './detail-view/detail-view.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import { PokemonFilterPipe } from './pokemon-filter.pipe';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MatCardModule} from '@angular/material/card';
     ControlsComponent,
     ListViewComponent,
     GridViewComponent,
-    DetailViewComponent
+    DetailViewComponent,
+    PokemonFilterPipe
   ],
   imports: [
     BrowserModule,

@@ -7,14 +7,14 @@
     </div>
     <div class="input-fields">
       <mat-form-field appearance="fill">
-        <input matInput type="text" placeholder="Search">
+        <input #inputRef (input)="handleInput(inputRef.value)" matInput type="text" placeholder="Search">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Pokemon Types</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let food of pokemonTypes" [value]="food.value">
-            {{food.viewValue}}
+        <mat-select (selectionchange)="handleSelectionChange($event)">
+          <mat-option (selectionchange)="handleSelectionChange($event)" *ngFor="let pokemonType of pokemonTypes" [value]="pokemonType.value">
+            {{pokemonType.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>

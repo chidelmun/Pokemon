@@ -25,16 +25,20 @@ export class GridViewComponent implements OnInit {
   ngOnInit(): void {
     this.pokemonService.getAllPokemons().subscribe((pokemons: PokemonListResponse) => {
       this.pokemons = pokemons.items;
-    })
+    });
   }
 
 
-  togglePokemon(pokemon: any) {
+  togglePokemon(pokemon: PokemonSummary) {
+    // console.log('****POKEMON***', pokemon);
     if (pokemon.isFavorite) {
-      const resp = this.pokemonService.favoritePokemon(pokemon.id);
-      console.log(resp);
+      this.pokemonService.unFavoritePokemon(pokemon.id).subscribe((data) => {
+        pokemon.isFavorite = data.isFavorite;
+      });
     } else {
-      this.pokemonService.unFavoritePokemon(pokemon.id);
+      this.pokemonService.favoritePokemon(pokemon.id).subscribe((data) => {
+        pokemon.isFavorite = data.isFavorite;
+      });
     }
   }
 }

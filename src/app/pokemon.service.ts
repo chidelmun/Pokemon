@@ -20,10 +20,12 @@ export class PokemonService {
   }
 
   favoritePokemon(id: string) {
+    console.log('***favorite****', id);
     return this.httpClient.post<any>(`${PokemonService.API_BASE_URL}/pokemon/${id}/favorite`, {});
   }
 
   unFavoritePokemon(id: string) {
+    console.log('***unfavorite****', id);
     return this.httpClient.post<any>(`${PokemonService.API_BASE_URL}/pokemon/${id}/unfavorite`, {});
   }
 

@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   searchTerm: string = '';
+  filteredType: string = '';
 
   handleSearch(searchValue: string) {
     this.searchTerm = searchValue;
+  }
+
+  handleTypeChange(type: string) {
+    this.searchTerm = type;
   }
 }

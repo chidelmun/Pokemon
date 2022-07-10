@@ -1,8 +1,8 @@
 <div class="controls-container">
     <div class="toggle-button">
       <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle >All </mat-button-toggle>
-        <mat-button-toggle >Favorites</mat-button-toggle>
+        <mat-button-toggle (click)="onAllClick()" >All </mat-button-toggle>
+        <mat-button-toggle (click)="onFavoritesClick()" >Favorites</mat-button-toggle>
       </mat-button-toggle-group>
     </div>
     <div class="input-fields">
@@ -12,8 +12,8 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Pokemon Types</mat-label>
-        <mat-select (selectionchange)="handleSelectionChange($event)">
-          <mat-option (selectionchange)="handleSelectionChange($event)" *ngFor="let pokemonType of pokemonTypes" [value]="pokemonType.value">
+        <mat-select [(ngModel)]="selectedType" (ngModelChange)="handleSelectionChange($event)">
+          <mat-option *ngFor="let pokemonType of pokemonTypes" [value]="pokemonType.value">
             {{pokemonType.viewValue}}
           </mat-option>
         </mat-select>

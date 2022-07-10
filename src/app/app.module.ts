@@ -19,6 +19,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { PokemonFilterPipe } from './pokemon-filter.pipe';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { PokemonFilterPipe } from './pokemon-filter.pipe';
     MatSelectModule,
     HttpClientModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

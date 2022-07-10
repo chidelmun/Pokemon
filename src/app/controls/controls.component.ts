@@ -8,11 +8,14 @@ import {MatSelectChange} from "@angular/material/select";
   styleUrls: ['./controls.component.scss']
 })
 export class ControlsComponent implements OnInit {
-
   @Output()
   onSearch: EventEmitter<string> = new EventEmitter<string>();
 
+  @Output()
+  onTypeChange: EventEmitter<string> = new EventEmitter<string>();
+
   pokemonTypes: any[] = [];
+  selectedType: string = '';
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -27,12 +30,19 @@ export class ControlsComponent implements OnInit {
     });
   }
 
-  handleSelectionChange(event: any) {
-    console.log('*****CHANGE****', event);
+  handleSelectionChange(type: string) {
+    this.onTypeChange.emit(type)
   }
 
   handleInput(searchValue: string) {
-    console.log('***Event****', searchValue);
     this.onSearch.emit(searchValue)
+  }
+
+  onAllClick() {
+
+  }
+
+  onFavoritesClick() {
+
   }
 }

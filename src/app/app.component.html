@@ -2,7 +2,7 @@
 
   <div class="pokemon-app-body-container">
     <section class="app-header-section">
-      <app-controls (onSearch)="handleSearch($event)"> </app-controls>
+      <app-controls (onSearch)="handleSearch($event)" (onTypeChange)="handleTypeChange($event)"> </app-controls>
     </section>
 
     <section class="app-body-section">

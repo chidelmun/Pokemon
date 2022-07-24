@@ -1,5 +1,5 @@
 <div [ngClass]="{'grid-container-grid-view': viewMode === 1}">
-  <mat-card [ngClass]="{'pokemon-card-grid-view': viewMode === 1, 'pokemon-card-list-view': viewMode === 0}"
+  <mat-card (click)="goToDetail(pokemon)" [ngClass]="{'pokemon-card-grid-view': viewMode === 1, 'pokemon-card-list-view': viewMode === 0}"
             *ngFor="let pokemon of pokemons | pokemonFilter : searchTerm: filterByFavorites ">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>

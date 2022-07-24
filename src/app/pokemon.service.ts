@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {PokemonListResponse} from "./models";
+import {Pokemon, PokemonListResponse, PokemonSummary} from "./models";
 
 @Injectable({
   providedIn: 'root'
@@ -15,17 +15,19 @@ export class PokemonService {
     return this.httpClient.get<PokemonListResponse>(`${PokemonService.API_BASE_URL}/pokemon`);
   }
 
+  getPokemon(id: string) {
+    return this.httpClient.get<Pokemon>(`${PokemonService.API_BASE_URL}/pokemon/${id}`);
+  }
+
   getPokemonTypes() {
     return this.httpClient.get<any>(`${PokemonService.API_BASE_URL}/pokemon-types`);
   }
 
   favoritePokemon(id: string) {
-    console.log('***favorite****', id);
     return this.httpClient.post<any>(`${PokemonService.API_BASE_URL}/pokemon/${id}/favorite`, {});
   }
 
   unFavoritePokemon(id: string) {
-    console.log('***unfavorite****', id);
     return this.httpClient.post<any>(`${PokemonService.API_BASE_URL}/pokemon/${id}/unfavorite`, {});
   }
 

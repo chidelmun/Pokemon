@@ -1,1 +1,48 @@
-<p>detail-view works!</p>
+<div class="pokemon-detail-container">
+  <img [src]="pokemonInfo?.image" alt="">
+ <div class="icons-container">
+   <mat-icon> volume_up </mat-icon>
+   <mat-icon [color]="pokemonInfo?.isFavorite ? 'primary' : 'accent' ">favorite</mat-icon>
+ </div>
+
+  <div class="pokemon-info">
+    <p> {{ pokemonInfo?.name }}</p>
+    <p> {{ pokemonInfo?.types }}</p>
+    <mat-progress-bar color="primary" mode="determinate" value="100">  </mat-progress-bar> <span> {{ pokemonInfo?.maxCP }}</span>
+    <br>
+    <mat-progress-bar color="accent" mode="determinate" value="100"></mat-progress-bar> <span> {{ pokemonInfo?.maxHP }} </span>
+  </div>
+
+  <div class="pokemon-detail-info">
+    <div class="left">
+        <h2> Height </h2>
+      <p> {{ pokemonInfo?.height?.minimum + 'm - ' +  pokemonInfo?.height?.maximum + 'm' }}</p>
+    </div>
+
+    <div class="right">
+        <h2> Weight </h2>
+      <p> {{ pokemonInfo?.weight?.minimum + 'Kg - ' +  pokemonInfo?.weight?.maximum + 'Kg' }}</p>
+    </div>
+  </div>
+
+  <h3> Evolutions </h3>
+
+  <div class="pokemon-evolutions-container">
+    <div class="pokemon-evolution" *ngFor="let evolution of pokemonInfo?.evolutions ">
+      <img class="evolutions-image" [src]="evolution?.image" alt="">
+     <div class="evolutions-info">
+       <p> {{ evolution?.name }}</p>
+       <mat-icon [color]="evolution?.isFavorite ? 'primary' : 'accent' ">favorite</mat-icon>
+     </div>
+    </div>
+
+    <div class="pokemon-evolution" *ngFor="let evolution of pokemonInfo?.previousEvolutions ">
+      <img class="evolutions-image" [src]="evolution?.image" alt="">
+      <div class="evolutions-info">
+        <p> {{ evolution?.name }}</p>
+        <mat-icon [color]="evolution?.isFavorite ? 'primary' : 'accent' ">favorite</mat-icon>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -12,10 +12,11 @@
     </section>
 
     <section class="app-body-section">
-      <app-grid-view [viewMode]="viewMode"
+      <app-grid-view *ngIf="isDetailView()" [viewMode]="viewMode"
                      [filterByFavorites]="filterByFavorites"
                      [searchTerm]="searchTerm" >
       </app-grid-view>
+      <router-outlet></router-outlet>
     </section>
   </div>
 

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PokemonService} from "../pokemon.service";
 import {PokemonListResponse, PokemonSummary, ViewMode} from "../models";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-grid-view',
@@ -19,7 +20,7 @@ export class GridViewComponent implements OnInit {
   @Input()
   viewMode: ViewMode = ViewMode.Grid;
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -39,5 +40,9 @@ export class GridViewComponent implements OnInit {
         pokemon.isFavorite = data.isFavorite;
       });
     }
+  }
+
+  goToDetail(pokemon: PokemonSummary) {
+      this.router.navigate([pokemon.id]);
   }
 }

@@ -1,0 +1,30 @@
+.pokemon-detail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pokemon-info {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.pokemon-detail-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.evolutions-image {
+  width: 10em;
+  height: 10em;
+}
+
+
+.pokemon-evolutions-container, .evolutions-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}

@@ -1,10 +1,10 @@
 <div [ngClass]="{'grid-container-grid-view': viewMode === 1}">
-  <mat-card (click)="goToDetail(pokemon)" [ngClass]="{'pokemon-card-grid-view': viewMode === 1, 'pokemon-card-list-view': viewMode === 0}"
+  <mat-card  [ngClass]="{'pokemon-card-grid-view': viewMode === 1, 'pokemon-card-list-view': viewMode === 0}"
             *ngFor="let pokemon of pokemons | pokemonFilter : searchTerm: filterByFavorites ">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
     </mat-card-header>
-    <img mat-card-image [src]="pokemon.image" [ngClass]="{'pokemon-image-list-view': viewMode === 0}">
+    <img (click)="goToDetail(pokemon)" mat-card-image [src]="pokemon.image" [ngClass]="{'pokemon-image-list-view': viewMode === 0}">
     <mat-card-content [ngClass]="{'mat-card-content-list-view': viewMode === 0}">
       <div class="pokemon-info">
         <span> {{ pokemon.name }}</span> <br>

@@ -2,7 +2,7 @@
 
   <div class="pokemon-app-body-container">
     <section class="app-header-section">
-      <app-controls (onListMode)="handleListMode()"
+      <app-controls *ngIf="isDetailView()" (onListMode)="handleListMode()"
                     (onGridMode)="handleGridMode()"
                     (onFavorites)="handleFavoritesClick($event)"
                     (onAll)="handleAllClicked($event)"

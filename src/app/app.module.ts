@@ -26,7 +26,7 @@ import {FormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     ControlsComponent,
-    GridViewComponent,s
+    GridViewComponent,
     DetailViewComponent,
     PokemonFilterPipe
   ],

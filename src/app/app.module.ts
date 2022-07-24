@@ -13,7 +13,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ControlsComponent } from './controls/controls.component';
-import { ListViewComponent } from './list-view/list-view.component';
 import { GridViewComponent } from './grid-view/grid-view.component';
 import { DetailViewComponent } from './detail-view/detail-view.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -27,8 +26,7 @@ import {FormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     ControlsComponent,
-    ListViewComponent,
-    GridViewComponent,
+    GridViewComponent,s
     DetailViewComponent,
     PokemonFilterPipe
   ],

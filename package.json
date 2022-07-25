@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:docs": "ng build --output-path=docs",
+    "deploy": "gh-pages -d docs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
